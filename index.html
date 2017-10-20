@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SIN Validation 🔥</title>
+	<style>
+		input {
+			height: 35px;
+			width: 235px;
+			border: 1px solid rgba(0,0,0,0.2);
+		}
+		input::placeholder, button {
+			font-family: 'Helvetica', 'Arial', sans-serif;
+			font-size: 16px;
+			letter-spacing: 1.2px;
+			padding: 8px;
+		}
+		input, button {
+			border: 1px solid rgba(0,0,0,0.2);
+			border-radius: 2px;
+		}
+		button {
+			height: 38px;
+			width: 85px;
+			color: #fff;
+			background: #48cdcc;
+			cursor: pointer;
+		}
+		/* hiding labels on inputs accessibly (still readable by screenreaders) */
+		.visually-hidden:not(:focus):not(:active) {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			border: 0;
+			padding: 0;
+			white-space: nowrap;
+			clip-path: inset(100%);
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+	</style>
+</head>
+
+<body>
+	<form action="">
+		<label for="sin" class="visually-hidden">SIN (no spaces or dashes)</label>
+		<input type="text" id="sin" placeholder="SIN (no spaces or dashes)" maxlength="9">
+		<button type="submit" id="submit-btn">Submit</button>
+	</form>
+	<script src="script.js"></script>
+</body>
+</html>
