@@ -9,12 +9,12 @@ element.onclick = function(e) {
 // validate user input
 function validateSin(input) {
 	// setup regular expressions
-	var existSinPattern = /^[*]{6}[0-9]{3}$/.test(input);
-	var newSinPattern = /^\d{9}$/.test(input);
+	let existSinPattern = /^[*]{6}[0-9]{3}$/.test(input);
+	let newSinPattern = /^\d{9}$/.test(input);
 	// set up arrays and total for Luhn validation
-	var singleNumArray = [];
-	var doubleNumArray = [];
-	var total = 0;
+	let singleNumArray = [];
+	let doubleNumArray = [];
+	let total = 0;
 
 	// check if input is blank 
 	if (input === "") {
@@ -25,7 +25,7 @@ function validateSin(input) {
 		}	// Luhn validation
 			else if (newSinPattern === true){
 			// turn input into an array and reverse order (to start from check digit)
-			var inputArray = input.split('').reverse();
+			const inputArray = input.split('').reverse();
 			// get even and odd indices and push values into arrays
 			for (var i = inputArray.length-1; i >= 0; i--) {
 				if (i % 2 !==0) {
@@ -39,7 +39,7 @@ function validateSin(input) {
 				return even * 2;
 			}).join('').split('');
 			// concat the two (even/single) arrays, turn strings to nums 
-			var concatArray = [...doubleNumArray, ...singleNumArray].map(Number);
+			let concatArray = [...doubleNumArray, ...singleNumArray].map(Number);
 			total = concatArray.reduce((a, b) => {
 				return a + b;
 			});
